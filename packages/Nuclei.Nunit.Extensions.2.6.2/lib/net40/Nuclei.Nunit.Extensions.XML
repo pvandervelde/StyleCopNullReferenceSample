@@ -1,0 +1,568 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Nuclei.Nunit.Extensions</name>
+    </assembly>
+    <members>
+        <member name="T:Nuclei.Nunit.Extensions.AssertExtensions">
+            <summary>
+            Defines additional methods useful during testing.
+            </summary>
+            <remarks>
+            This code is based on the code for the RoundTripSerialize method in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.AssertExtensions.RoundTripSerialize``1(``0)">
+            <summary>
+            Serializes and then deserializes the given instance.
+            </summary>
+            <typeparam name="T">The type of the instance.</typeparam>
+            <param name="instance">The instance.</param>
+            <returns>A copy of the instance.</returns>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.ChiSquareTest">
+            <summary>
+            Defines a chi-squared test.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.EqualityContractVerifierTest">
+            <summary>
+            The base class for tests that verify that <c>object.Equals(object)</c>, <c>IEquatable{T}.Equals(T)</c>
+            and the <c>==</c> and <c>!=</c> operators are implemented correctly.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the equality contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EqualityContract">
+            <summary>
+            Gets the object that provides the objects to be compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.ObjectEquals">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.ObjectEqualsWithNullObject">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if the passed object is <see langword="null" />.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.ObjectEqualsWithNonEqualObjectOfSameType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if a non-equal object of the same type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.ObjectEqualsWithNonEqualObjectOfDifferentType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if an object of a different type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EquatableEquals">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EquatableEqualsWithNonEqualObject">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value
+            if a non-equal object is passed in as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.EqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.NotEqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.NotEqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.NotEqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.NotEqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifierTest.HashCodeComparisonForEqualObjects">
+            <summary>
+            Tests whether <c>object.GetHashcode()</c> returns the same value
+            for two equal objects.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1">
+            <summary>
+            Defines the base class for tests that verify that exceptions are correctly implemented.
+            </summary>
+            <typeparam name="TException">The type of the exception that is being tested.</typeparam>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the exception contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.HasSerializationAttribute">
+            <summary>
+            Verifies that the exception is marked with the <c>SerializableAttribute</c>.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.HasDefaultConstructor">
+            <summary>
+            Verifies that the exception has a parameterless constructor.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.HasMessageConstructor">
+            <summary>
+            Verifies that the exception has a constructor that takes an exception message.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.HasMessageAndExceptionConstructor">
+            <summary>
+            Verifies that the exception has a constructor that takes both an inner exception and a message.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.HasSerializationConstructor">
+            <summary>
+            Verifies that the exception has a serialization constructor.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.ExceptionContractVerifier`1.RoundTripSerializeAndDeserialize">
+            <summary>
+            Verifies that the exception can be serialized, then deserialized while maintaining
+            the inner exception and the message.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.Gamma">
+            <summary>
+            Defines a gamma distribution.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.HashCodeContractVerifierTest">
+            <summary>
+            The base class for tests that need to verify that <c>object.GetHashcode()</c> is implemented
+            correctly.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.HashCodeContractVerifierTest.HashContract">
+            <summary>
+            Gets an instance of the hashcode contract verifier for use in the tests.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashCodeContractVerifierTest.VerifyCollisionProbability">
+            <summary>
+            Verifies that the probability of hashcode collisions is less than the
+            desired limit.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashCodeContractVerifierTest.VerifyUniformDistribution">
+            <summary>
+            Verifies that the hashcodes are uniformly distributed.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.EqualityContractVerifier`1">
+            <summary>
+            The typed-base class for contract verifiers that test if the equality contract
+            is implemented correctly.
+            </summary>
+            <typeparam name="T">The type for which the equality contract should be verified.</typeparam>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.HasOperatorOverloads">
+            <summary>
+            Gets a value indicating whether operator overloads are defined for the type.
+            </summary>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.FirstInstance">
+            <summary>
+            Gets the first object that should be used in equality comparisons.
+            </summary>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.SecondInstance">
+            <summary>
+            Gets the second object that should be used in equality comparisons.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.Copy(`0)">
+            <summary>
+            Creates a deep copy of the given object.
+            </summary>
+            <remarks>
+            This method is used to create identical objects that are not referentially identical.
+            </remarks>
+            <param name="original">The original object that should be copied.</param>
+            <returns>A new instance that contains the same values as the original object.</returns>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.ObjectEquals">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.ObjectEqualsWithNullObject">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if the passed object is <see langword="null" />.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.ObjectEqualsWithNonEqualObjectOfSameType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if a non-equal object of the same type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.ObjectEqualsWithNonEqualObjectOfDifferentType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if an object of a different type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EquatableEquals">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EquatableEqualsWithNonEqualObject">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value
+            if a non-equal object is passed in as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.EqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.NotEqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.NotEqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.NotEqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.NotEqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.EqualityContractVerifier`1.HashCodeComparisonForEqualObjects">
+            <summary>
+            Tests whether <c>object.GetHashcode()</c> returns the same value
+            for two equal objects.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.HashCodeContractVerifier">
+            <summary>
+            The base class for contract verifiers that test if <c>object.GetHashcode()</c> is
+            correctly implemented.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashCodeContractVerifier.GetHashCodes">
+            <summary>
+            Returns a collection of hashcodes.
+            </summary>
+            <returns>The collection containing the hashcodes.</returns>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashCodeContractVerifier.VerifyCollisionProbability">
+            <summary>
+            Verifies that the probability of a hashcode collision is lower than the desired limit.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashCodeContractVerifier.VerifyUniformDistribution">
+            <summary>
+            Verifies that the hashcodes are uniformly distributed.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.HashStore">
+            <summary>
+            Stores a number of hashcodes for use in collision calculations.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashStore.#ctor(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.HashStore"/> class.
+            </summary>
+            <param name="hashes">The collection of hashcodes.</param>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.HashStoreResult">
+            <summary>
+            Stores the result of a hashcode collision calculation.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.HashStoreResult.#ctor(System.Double,System.Double)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.HashStoreResult"/> class.
+            </summary>
+            <param name="collisionProbability">The probability of a hashcode collision.</param>
+            <param name="uniformDistributionDeviationProbability">The probability a hashcode deviates from the uniform distribution.</param>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.HashStoreResult.CollisionProbability">
+            <summary>
+            Gets the probability of a hashcode collision.
+            </summary>
+        </member>
+        <member name="P:Nuclei.Nunit.Extensions.HashStoreResult.UniformDistributionDeviationProbability">
+            <summary>
+            Gets the probability a hashcode deviates from the uniform distribution.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.IEqualityContractVerifier">
+            <summary>
+            Defines the interface for tests that need to verify that the equality contract
+            is implemented correctly.
+            </summary>
+            <remarks>
+            <para>
+            The interface is defined so that the <see cref="T:Nuclei.Nunit.Extensions.EqualityContractVerifierTest"/> can
+            call methods on a non-generic object, while the user can provide a generic class.
+            </para>
+            <para>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.ObjectEquals">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.ObjectEqualsWithNullObject">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if the passed object is <see langword="null" />.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.ObjectEqualsWithNonEqualObjectOfSameType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if a non-equal object of the same type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.ObjectEqualsWithNonEqualObjectOfDifferentType">
+            <summary>
+            Tests whether <c>Object.Equals(object)</c> gives the correct return value
+            if an object of a different type is passed as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EquatableEquals">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EquatableEqualsWithNonEqualObject">
+            <summary>
+            Tests whether <c>IEquatable{T}.Equals(T)</c> gives the correct return value
+            if a non-equal object is passed in as the parameter.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.EqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.NotEqualsOperatorWithEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.NotEqualsOperatorWithNonEqualObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if two non-equal objects are compared.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.NotEqualsOperatorWithLeftNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if a null reference is compared to an object.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.NotEqualsOperatorWithRightNullObject">
+            <summary>
+            Tests whether the not-equals operator gives the correct return value
+            if an object is compared to a null reference.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.IEqualityContractVerifier.HashCodeComparisonForEqualObjects">
+            <summary>
+            Tests whether <c>object.GetHashcode()</c> returns the same value
+            for two equal objects.
+            </summary>
+        </member>
+        <member name="T:Nuclei.Nunit.Extensions.NotEnoughHashesException">
+            <summary>
+            An exception thrown if not enough hashcodes are provided to the <see cref="T:Nuclei.Nunit.Extensions.HashCodeContractVerifier"/>.
+            </summary>
+            <remarks>
+            This code is based on, but not exactly the same as, the code of the hashcode contract verifier in the MbUnit
+            project which is licensed under the Apache License 2.0. More information can be found at:
+            https://code.google.com/p/mb-unit/.
+            </remarks>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.NotEnoughHashesException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.NotEnoughHashesException"/> class.
+            </summary>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.NotEnoughHashesException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.NotEnoughHashesException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.NotEnoughHashesException.#ctor(System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.NotEnoughHashesException"/> class.
+            </summary>
+            <param name="expected">The expected number of hashes.</param>
+            <param name="actual">The actual number of hashes.</param>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.NotEnoughHashesException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.NotEnoughHashesException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:Nuclei.Nunit.Extensions.NotEnoughHashesException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Nuclei.Nunit.Extensions.NotEnoughHashesException"/> class.
+            </summary>
+            <param name="info">
+                The <see cref="T:System.Runtime.Serialization.SerializationInfo"/> that holds the serialized
+                object data about the exception being thrown.
+            </param>
+            <param name="context">
+                The <see cref="T:System.Runtime.Serialization.StreamingContext"/> that contains contextual
+                information about the source or destination.
+            </param>
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="info"/> parameter is null.
+            </exception>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">
+            The class name is null or <see cref="P:System.Exception.HResult"/> is zero (0).
+            </exception>
+        </member>
+    </members>
+</doc>

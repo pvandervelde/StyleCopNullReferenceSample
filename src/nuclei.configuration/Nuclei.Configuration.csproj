@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SolutionDir Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*undefined*'">$(MSBuildProjectDirectory)\..</SolutionDir>
+    <ProjectGuid>{62E77B2F-34EE-4258-B1C7-9F30EB80AE12}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Nuclei.Configuration</RootNamespace>
+    <AssemblyName>Nuclei.Configuration</AssemblyName>
+    <!-- VS information -->
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <!-- Configuration -->
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <!-- Project directories -->
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <!-- Build configuration -->
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>TRACE;DEBUG;CODE_ANALYSIS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;CODE_ANALYSIS</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Deploy|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)/base.props" />
+  <ItemGroup>
+    <Reference Include="Consul, Version=0.6.4.7, Culture=neutral, PublicKeyToken=20a6ad9a81df1d95, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Consul.0.6.4.7\lib\net45\Consul.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Nuclei.Build, Version=0.9.0.0, Culture=neutral, PublicKeyToken=ee5b68ec5ad4ef93, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Nuclei.Build.0.9.0\lib\net40\Nuclei.Build.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(SOFTWARE_SIGNING_KEY_PATH)\nuclei.snk">
+      <Link>Properties\App.snk</Link>
+    </None>
+    <None Include="nuclei.configuration.nuspec" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigurationBase.cs" />
+    <Compile Include="ConfigurationHelpers.cs" />
+    <Compile Include="ConfigurationKey.cs" />
+    <Compile Include="ConfigurationKeyBase.cs" />
+    <Compile Include="ConfigurationKeys.cs" />
+    <Compile Include="ConstantConfiguration.cs" />
+    <Compile Include="ConsulConfiguration.cs" />
+    <Compile Include="HierarchicalConfiguration.cs" />
+    <Compile Include="IConfiguration.cs" />
+    <Compile Include="NullConfiguration.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationConfiguration.cs" />
+    <Compile Include="ConfigurationSectionToXmlTranslator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\Newtonsoft.Json.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+    <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
